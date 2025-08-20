@@ -1,0 +1,110 @@
+services:
+
+  order-php:
+    build:
+      context: ./order
+      dockerfile: Dockerfile
+    container_name: order-php
+    restart: always
+    env_file: .env
+    volumes:
+      - ./order:/var/www/html:cached
+    depends_on:
+      - order-db
+      - rabbitmq
+      - redis
+    networks:
+      - backend
+
+  order-nginx:
+    image: nginx:1.27-alpine
+    container_name: order-nginx
+    restart: always
+    volumes:
+      - ./order:/var/www/html:cached
+      - ./order/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8081:80"
+    depends_on:
+      - order-php
+    networks:
+      - backend
+
+  order-db:
+    image: postgres:16
+    container_name: order-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${ORDER_DB_USER}
+      POSTGRES_PASSWORD: ${ORDER_DB_PASSWORD}
+      POSTGRES_DB: ${ORDER_DB_NAME}
+    ports:
+      - "5433:5432"
+    networks:
+      - backend
+
+  product-php:
+    build:
+      context: ./product
+      dockerfile: Dockerfile
+    container_name: product-php
+    restart: always
+    env_file: .env
+    volumes:
+      - ./product:/var/www/html:cached
+    depends_on:
+      - product-db
+      - rabbitmq
+      - redis
+    networks:
+      - backend
+
+  product-nginx:
+    image: nginx:1.27-alpine
+    container_name: product-nginx
+    restart: always
+    volumes:
+      - ./product:/var/www/html:cached
+      - ./product/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8082:80"
+    depends_on:
+      - product-php
+    networks:
+      - backend
+
+  product-db:
+    image: postgres:16
+    container_name: product-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${PRODUCT_DB_USER}
+      POSTGRES_PASSWORD: ${PRODUCT_DB_PASSWORD}
+      POSTGRES_DB: ${PRODUCT_DB_NAME}
+    ports:
+      - "5434:5432"
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
