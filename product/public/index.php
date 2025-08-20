@@ -1,9 +1,9 @@
 <?php
-/**
- * Created by Artem Holovanov.
- * Date: 20.08.2025 16:49.
- */
 
-declare(strict_types=1);
+use App\Kernel;
 
-echo 'Hello Product service!';
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+return function (array $context) {
+    return new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
+};
