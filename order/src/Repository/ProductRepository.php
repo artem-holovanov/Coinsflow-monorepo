@@ -1,15 +1,18 @@
 <?php
+/**
+ * Created by Artem Holovanov.
+ * Date: 21.08.2025 14:52.
+ */
+
+declare(strict_types=1);
 
 namespace App\Repository;
 
 use App\Entity\Product;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use CommonBundle\Repository\ProductRepository as BaseRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<Product>
- */
-class ProductRepository extends ServiceEntityRepository
+class ProductRepository extends BaseRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

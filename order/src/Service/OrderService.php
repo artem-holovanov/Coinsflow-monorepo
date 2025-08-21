@@ -10,10 +10,7 @@ namespace App\Service;
 
 use App\Entity\Order;
 use App\Repository\OrderRepository;
-use CommonBundle\ValueObject\OrderValue;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Messenger\Envelope;
-use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
 
 class OrderService
