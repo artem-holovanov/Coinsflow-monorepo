@@ -9,10 +9,13 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Entity\Product;
-use CommonBundle\Repository\ProductRepository as BaseRepository;
+use CommonBundle\Repository\AbstractProductRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-class ProductRepository extends BaseRepository
+/**
+ * @extends AbstractProductRepository<Product>
+ */
+class ProductRepository extends AbstractProductRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

@@ -26,21 +26,35 @@ class ProductService
 
     public function create(Product $product): Product
     {
-        // todo: wrap into try catch and use DB transaction
-        $this->em->persist($product);
-        $this->em->flush();
+        $this->em->beginTransaction();
+        try {
+            $this->em->persist($product);
+            $this->em->flush();
 
-        $this->dispatch($product);
+            $this->dispatch($product);
+
+            $this->em->commit();
+        } catch (\Throwable $e) {
+            $this->em->rollback();
+            throw $e;
+        }
 
         return $product;
     }
 
     public function update(Product $product): void
     {
-        // todo: wrap into try catch and use DB transaction
-        $this->em->flush();
+        $this->em->beginTransaction();
+        try {
+            $this->em->flush();
 
-        $this->dispatch($product);
+            $this->dispatch($product);
+
+            $this->em->commit();
+        } catch (\Throwable $e) {
+            $this->em->rollback();
+            throw $e;
+        }
     }
 
     public function getAll(): array
