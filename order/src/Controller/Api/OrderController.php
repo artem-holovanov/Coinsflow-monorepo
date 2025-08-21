@@ -16,7 +16,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Uid\Uuid;
 
 #[Route('/api/orders')]
 class OrderController extends AbstractController
@@ -52,7 +51,7 @@ class OrderController extends AbstractController
     }
 
     #[Route('/{id}', name: 'order_read', methods: ['GET'])]
-    public function get(Uuid $id): JsonResponse
+    public function get(int $id): JsonResponse
     {
         $order = $this->orderService->get($id);
         if (!$order) {

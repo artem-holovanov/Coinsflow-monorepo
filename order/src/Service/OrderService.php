@@ -38,7 +38,7 @@ class OrderService
         return $this->repository->findAll();
     }
 
-    public function get(Uuid $id): ?Order
+    public function get(int $id): ?Order
     {
         return $this->repository->find($id);
     }
