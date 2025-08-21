@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "62fea8b0-55dd-4b66-9c11-17193ddf3bb8",
+		"name": "Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25128764"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "products/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_HOST}}/api/products",
+							"host": [
+								"{{PRODUCT_HOST}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_HOST}}/api/products/{{productUuid}}",
+							"host": [
+								"{{PRODUCT_HOST}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{productUuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"{{$randomLoremWords}}\",\n    \"price\": {{$randomPrice}},\n    \"quantity\": {{$randomInt}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_HOST}}/api/products",
+							"host": [
+								"{{PRODUCT_HOST}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "orders/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ORDER_HOST}}/api/orders",
+							"host": [
+								"{{ORDER_HOST}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ORDER_HOST}}/api/orders/{{orderId}}",
+							"host": [
+								"{{ORDER_HOST}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product\": \"{{productUuid}}\",\n    \"customerName\": \"{{$randomFullName}}\",\n    \"quantityOrdered\": {{$randomInt}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ORDER_HOST}}/api/orders",
+							"host": [
+								"{{ORDER_HOST}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

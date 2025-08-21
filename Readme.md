@@ -17,7 +17,10 @@ php bin/console messenger:stop-workers
 php bin/console doctrine:migrations:migrate --allow-no-migration -n
 ```
 
-Hosts:
+### Postman
+Collection and environment are exported to [postman folder](postman).
+
+### Hosts:
 * Order → http://localhost:8081
 * Product → http://localhost:8082
 * RabbitMQ → http://localhost:15672 (guest/guest)
