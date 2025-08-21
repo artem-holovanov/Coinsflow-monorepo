@@ -31,7 +31,7 @@ class Order
     #[ORM\Column(type: Types::INTEGER)]
     protected ?int $quantityOrdered = null;
 
-    #[ORM\ManyToOne(inversedBy: 'orders')]
+    #[ORM\ManyToOne(targetEntity: Product::class, cascade: ['persist'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Product $product = null;
 

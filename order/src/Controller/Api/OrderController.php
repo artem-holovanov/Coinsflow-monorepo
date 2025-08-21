@@ -45,7 +45,13 @@ class OrderController extends AbstractController
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        $this->orderService->create($order);
+        try {
+            $this->orderService->create($order);
+        } catch (\Throwable $exception) {
+            return $this->json([
+                'errors' => [$exception->getMessage()]
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
 
         return $this->json($order, Response::HTTP_CREATED);
     }
