@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Entity\Product;
-use App\Repository\ProductRepository;
+use CommonBundle\Repository\ProductRepository;
 use CommonBundle\ValueObject\ProductValue;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Messenger\Envelope;
@@ -50,7 +50,9 @@ class ProductService
 
     public function get(Uuid $id): ?Product
     {
-        return $this->repository->find($id);
+        /** @var Poduct $entity */
+        $entity = $this->repository->find($id);
+        return $entity;
     }
 
     private function dispatch(Product $product): void
