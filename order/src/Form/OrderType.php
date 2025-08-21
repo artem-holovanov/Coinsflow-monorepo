@@ -20,9 +20,8 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('price', TextType::class)
-            ->add('quantity', IntegerType::class);
+            ->add('customerName', TextType::class)
+            ->add('quantityOrdered', IntegerType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

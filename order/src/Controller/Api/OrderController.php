@@ -62,29 +62,6 @@ class OrderController extends AbstractController
         return $this->json($order);
     }
 
-    #[Route('/{id}', name: 'order_update', methods: ['PATCH'])]
-    public function update(Uuid $id, Request $request): JsonResponse
-    {
-        $order = $this->orderService->get($id);
-        if (!$order) {
-            return $this->json(['error' => 'Order not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        $form = $this->createForm(OrderType::class, $order);
-        $data = json_decode($request->getContent(), true, 512, JSON_THROW_ON_ERROR);
-        $form->submit($data);
-
-        if (!$form->isValid()) {
-            return $this->json([
-                'errors' => $this->getFormErrors($form)
-            ], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $this->orderService->update();
-
-        return $this->json($order);
-    }
-
     private function getFormErrors($form): array
     {
         $errors = [];
