@@ -80,7 +80,7 @@ class ProductController extends AbstractController
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        $this->productService->update();
+        $this->productService->update($product);
 
         return $this->json($product);
     }

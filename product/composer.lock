@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f4b1f6f80764583ddb988be0261996b",
+    "content-hash": "a5bff19a56424cc4045881c7523d4b32",
     "packages": [
         {
             "name": "coninsflow/common-bundle",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artem-holovanov/Coinsflow-bundle.git",
-                "reference": "c1ba9e7121c010ccff1975a435a1bad96057ca8f"
+                "reference": "cb80d8735c67c4ebc7adbb978a08975f9770bcd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/c1ba9e7121c010ccff1975a435a1bad96057ca8f",
-                "reference": "c1ba9e7121c010ccff1975a435a1bad96057ca8f",
+                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/cb80d8735c67c4ebc7adbb978a08975f9770bcd5",
+                "reference": "cb80d8735c67c4ebc7adbb978a08975f9770bcd5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
-                "symfony/framework-bundle": "6.4.*"
+                "symfony/framework-bundle": "6.4.*",
+                "symfony/uid": "6.4.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.5",
@@ -55,10 +56,10 @@
             ],
             "description": "A reusable Common Symfony Bundle",
             "support": {
-                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v1.0.0",
+                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v1.0.1",
                 "issues": "https://github.com/artem-holovanov/Coinsflow-bundle/issues"
             },
-            "time": "2025-08-21T08:23:48+00:00"
+            "time": "2025-08-21T09:13:57+00:00"
         },
         {
             "name": "doctrine/collections",
