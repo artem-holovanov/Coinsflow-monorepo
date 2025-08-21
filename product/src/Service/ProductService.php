@@ -28,6 +28,7 @@ class ProductService
     {
         $this->em->beginTransaction();
         try {
+            $product->setId(Uuid::v7());
             $this->em->persist($product);
             $this->em->flush();
 

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "600f74f714a8222cba4834d8dc58884d",
+    "content-hash": "8e764559767f55d110af329bd042c749",
     "packages": [
         {
             "name": "coninsflow/common-bundle",
-            "version": "v1.0.12",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artem-holovanov/Coinsflow-bundle.git",
-                "reference": "77509891e2f4412168610d77e3429af409246dfe"
+                "reference": "f53e6aeb0322b155d2ac16a0222748814660cc64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/77509891e2f4412168610d77e3429af409246dfe",
-                "reference": "77509891e2f4412168610d77e3429af409246dfe",
+                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/f53e6aeb0322b155d2ac16a0222748814660cc64",
+                "reference": "f53e6aeb0322b155d2ac16a0222748814660cc64",
                 "shasum": ""
             },
             "require": {
@@ -56,10 +56,10 @@
             ],
             "description": "A reusable Common Symfony Bundle",
             "support": {
-                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v1.0.12",
+                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v2.0.0",
                 "issues": "https://github.com/artem-holovanov/Coinsflow-bundle/issues"
             },
-            "time": "2025-08-21T14:54:58+00:00"
+            "time": "2025-08-21T18:07:03+00:00"
         },
         {
             "name": "doctrine/collections",
