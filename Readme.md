@@ -14,7 +14,6 @@ execute set of commands
 composer install
 composer dump-autoload --optimize --classmap-authoritative
 php bin/console messenger:stop-workers
-php bin/console doctrine:database:create --if-not-exists
 php bin/console doctrine:migrations:migrate --allow-no-migration -n
 ```
 
