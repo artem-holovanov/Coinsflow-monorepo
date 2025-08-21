@@ -42,21 +42,6 @@ class ProductService
         return $product;
     }
 
-    public function update(Product $product): void
-    {
-        $this->em->beginTransaction();
-        try {
-            $this->em->flush();
-
-            $this->dispatch($product);
-
-            $this->em->commit();
-        } catch (\Throwable $e) {
-            $this->em->rollback();
-            throw $e;
-        }
-    }
-
     public function getAll(): array
     {
         return $this->repository->findAll();

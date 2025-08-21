@@ -62,29 +62,6 @@ class ProductController extends AbstractController
         return $this->json($product);
     }
 
-    #[Route('/{id}', name: 'product_update', methods: ['PATCH'])]
-    public function update(Uuid $id, Request $request): JsonResponse
-    {
-        $product = $this->productService->get($id);
-        if (!$product) {
-            return $this->json(['error' => 'Product not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        $form = $this->createForm(ProductType::class, $product);
-        $data = json_decode($request->getContent(), true, 512, JSON_THROW_ON_ERROR);
-        $form->submit($data);
-
-        if (!$form->isValid()) {
-            return $this->json([
-                'errors' => $this->getFormErrors($form)
-            ], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
-
-        $this->productService->update($product);
-
-        return $this->json($product);
-    }
-
     private function getFormErrors($form): array
     {
         $errors = [];
