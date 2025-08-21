@@ -29,7 +29,7 @@ class ProductController extends AbstractController
     public function index(): JsonResponse
     {
         $products = $this->productService->getAll();
-        return $this->json($products, Response::HTTP_OK);
+        return $this->json(['data' => $products], Response::HTTP_OK);
     }
 
     #[Route('', name: 'product_create', methods: ['POST'])]
@@ -43,7 +43,7 @@ class ProductController extends AbstractController
         if (!$form->isValid()) {
             return $this->json([
                 'errors' => $this->getFormErrors($form)
-            ], Response::HTTP_BAD_REQUEST);
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $this->productService->create($product);
@@ -77,7 +77,7 @@ class ProductController extends AbstractController
         if (!$form->isValid()) {
             return $this->json([
                 'errors' => $this->getFormErrors($form)
-            ], Response::HTTP_BAD_REQUEST);
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $this->productService->update();
