@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/artem-holovanov/Coinsflow-bundle.git",
-                "reference": "ff5029b035bfeacf00db901ac4fc4e4117d12156"
+                "reference": "c1ba9e7121c010ccff1975a435a1bad96057ca8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/ff5029b035bfeacf00db901ac4fc4e4117d12156",
-                "reference": "ff5029b035bfeacf00db901ac4fc4e4117d12156",
+                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/c1ba9e7121c010ccff1975a435a1bad96057ca8f",
+                "reference": "c1ba9e7121c010ccff1975a435a1bad96057ca8f",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/main",
                 "issues": "https://github.com/artem-holovanov/Coinsflow-bundle/issues"
             },
-            "time": "2025-08-21T08:08:33+00:00"
+            "time": "2025-08-21T08:23:48+00:00"
         },
         {
             "name": "doctrine/collections",
