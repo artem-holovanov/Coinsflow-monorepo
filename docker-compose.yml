@@ -22,7 +22,7 @@ services:
     restart: always
     volumes:
       - ./order:/var/www/html:cached
-      - ./order/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./order/docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "8081:80"
     depends_on:
@@ -65,7 +65,7 @@ services:
     restart: always
     volumes:
       - ./product:/var/www/html:cached
-      - ./product/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./product/docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "8082:80"
     depends_on:
