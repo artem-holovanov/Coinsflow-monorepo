@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "coninsflow/common-bundle",
-            "version": "v1.0.1",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artem-holovanov/Coinsflow-bundle.git",
-                "reference": "cb80d8735c67c4ebc7adbb978a08975f9770bcd5"
+                "reference": "f65d5694a81b63f4100d2a5ddcb9f689a925441e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/cb80d8735c67c4ebc7adbb978a08975f9770bcd5",
-                "reference": "cb80d8735c67c4ebc7adbb978a08975f9770bcd5",
+                "url": "https://api.github.com/repos/artem-holovanov/Coinsflow-bundle/zipball/f65d5694a81b63f4100d2a5ddcb9f689a925441e",
+                "reference": "f65d5694a81b63f4100d2a5ddcb9f689a925441e",
                 "shasum": ""
             },
             "require": {
@@ -56,10 +56,10 @@
             ],
             "description": "A reusable Common Symfony Bundle",
             "support": {
-                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v1.0.1",
+                "source": "https://github.com/artem-holovanov/Coinsflow-bundle/tree/v1.0.10",
                 "issues": "https://github.com/artem-holovanov/Coinsflow-bundle/issues"
             },
-            "time": "2025-08-21T09:13:57+00:00"
+            "time": "2025-08-21T12:07:22+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -5331,7 +5331,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -5340,6 +5340,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
